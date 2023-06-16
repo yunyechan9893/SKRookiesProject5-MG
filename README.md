@@ -6,7 +6,7 @@
 - 꼭 봐주세요
 
 ## 기술스택
-![기술스택](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/93aefa23-2396-44db-8cdd-fdbc1d0b9511)
+![기술스택](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/2d1ef016-cf6d-48b5-b0c1-7173f67f3c46)
 
 ## 인프라 구성도
 ![7조_인프라구성도](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/c5c18ae0-ee20-44a3-97f7-ca7923d27d67)
