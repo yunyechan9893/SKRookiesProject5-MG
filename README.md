@@ -4,9 +4,13 @@
 - 꼭 봐주세요
 ### 시연영상 : [[멍결고리 시연영상 YouTube 이동하기]](https://www.youtube.com/watch?v=CGVKXz7o-v8)
 - 꼭 봐주세요
-    
+
+## 기술스택
+![기술스택](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/93aefa23-2396-44db-8cdd-fdbc1d0b9511)
+
 ## 인프라 구성도
 ![7조_인프라구성도](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/c5c18ae0-ee20-44a3-97f7-ca7923d27d67)
+
 
 # PPT
 ![7조_최종발표1](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/8c5dc5a0-6bc5-4f64-85cd-a21783fdbf65)
