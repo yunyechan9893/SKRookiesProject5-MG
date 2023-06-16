@@ -1,7 +1,9 @@
 # 간단 정리
 ## 영상
-    - 홍보영상 : https://www.youtube.com/watch?v=CcHQCNGeMlg
-    - 시연영상 : https://www.youtube.com/watch?v=CGVKXz7o-v8
+### 홍보영상 : [[멍결고리 홍보영상 YouTube 이동하기]](https://www.youtube.com/watch?v=CcHQCNGeMlg)
+- 꼭 봐주세요
+### 시연영상 : [[멍결고리 시연영상 YouTube 이동하기]](https://www.youtube.com/watch?v=CGVKXz7o-v8)
+- 꼭 봐주세요
     
 ## 인프라 구성도
 ![7조_인프라구성도](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/c5c18ae0-ee20-44a3-97f7-ca7923d27d67)
