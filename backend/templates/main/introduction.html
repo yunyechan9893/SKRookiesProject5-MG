@@ -1,0 +1,334 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<style>
+  @font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#frame{
+  height: 100%;
+    border: 2px dashed rgb(239, 239, 239);
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* border: 2px dashed rgb(239, 239, 239); */
+    background-color: rgba(233, 236, 241, 0.5);
+    width: 1100px;
+    right: 19.33333333%;
+}
+
+.image-container {
+    /* border: 2px solid rgb(4, 196, 255); */
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    height: 350px;
+    /* margin-left: 0px; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+  max-width: 350px;
+  max-height: 350px;
+  position: relative;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+
+.frame2{
+  width:90%;
+  height:1000px;
+  align-items: flex-start;
+  vertical-align: middle; 
+  justify-content: center;
+  gap:130px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.imageandtext{
+  width:90%;
+  display: flex;
+  align-items: center;
+  vertical-align: middle; 
+  display: flex; 
+  justify-content: center;
+  gap:60px;
+  /* border:3px solid blue; */
+  margin-left: 5%;
+}
+#text-container {
+  height:fit-content;
+  width: 600px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* border: 3px solid brown; */
+  align-items:center; 
+  vertical-align: middle; 
+  display: flex; 
+  justify-content: center;
+  }
+
+
+#gpt{
+  background-color: rgb(245, 214, 225,0.2);
+  font-size: 17px;
+  font-family: 'KyoboHand';
+  height: fit-content;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  color: #0b0b0b;
+  line-height: 2.5;
+  letter-spacing: 1px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 26px;
+  padding-right: 26px;
+
+  
+
+}
+
+
+.name ,.species, .age{
+  display: flex;
+}
+#infos{
+  margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    color: #333;
+    /* background-color: rgb(239, 239, 239); */
+    border-radius: 20px;
+    padding: 10px;
+}
+#dogns{
+  display: flex;
+    margin-top: 10px;
+    align-items: center;
+    vertical-align: middle;
+    /* justify-content: center; */
+    padding-left: 50px;
+}
+
+.merge{
+    /* border:2px solid green; */
+    /* display:flex; */
+    padding: 5px;
+}
+
+#dogspecies{
+  line-height: 1.5;
+  text-align: center;
+  width:fit-content;
+  
+}
+#dogage{
+  line-height: 1.5;
+  /* margin-left: 170px; */
+  text-align: center;
+  width:fit-content;
+}
+
+.highlight {
+    background-color: pink;
+    display: inline-block;
+    padding: 0 8px;
+    line-height: 0.7;
+    font-family: 'HSSaemaul-Regular';
+    font-size: 20px;
+}
+
+.species, .age {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 0.5;
+    font-size: 18px; 
+    font-family: 'Pretendard-Regular'
+}
+
+
+#button {
+    font-family: 'S-CoreDream-3Light';
+    background-color: #F5D5E0;
+    color: #333;
+    font-size: 1.0rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    margin-top:40px;
+}
+
+#button:hover {
+    background-color: #F29B9B;
+    color: #fff;
+}
+@font-face {
+font-family: 'HSSaemaul-Regular';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+font-weight: lighter;
+font-style: normal;
+}
+
+.space-after {
+    margin-left: 30px;
+  }
+
+.name {
+  font-weight:bold;
+  font-size: 30px;
+  font-family: 'S-CoreDream-3Light';
+  justify-content: center;
+  padding: 20px;
+}
+
+.species{
+  font-size: 18px;
+   font-family: 'Pretendard-Regular';
+}
+</style>
+
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="row">
+      <div class="main_about_area sections text-center">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="head_title text-center">
+            <h4 class="subtitle">Who are you?</h4>
+            <h2 style="font-weight: border;">Profile</h2>
+            <div class="separator"></div>
+            <p> Let me introduce you the mung <br> Check the mung's detailed information! Click the "start chatting" if you love it ♬ </p>
+          </div>
+          <div id="main_frame">
+            <div id="frame">
+              <div class="frame2">
+                <div class="imageandtext">
+                  <div class="image-container">
+                    <div class="dog-card">
+                      <img id="dog_img" class="dog-image">
+                    </div>
+                  </div>
+                  <div id="text-container">
+                    <div id="infos">
+                      <h4 class="name" id="dog_name">
+                      </h4><br>
+                      <div id="dogns">
+                        <div class="merge">
+                          <div id="dogspecies" >
+                            <p class="species">
+                              <span class="highlight">페르소나</span>
+                              <span> : </span>
+                              <span id="persona"></span>
+                            </p>
+                          </div>
+                          <div id="dogage">
+                            <p class="age">
+                              <span class="highlight">나이 </span>
+                              <span class="space-after"> : </span>
+                              <span id="age"></span>
+                              <span> 살 </span>
+                            </p>        
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <form id="chat_form" method="POST">
+                      <input id="id" type="hidden" name="dogid">
+                      <input id="button" type="submit" value="♥&nbsp;채팅 시작&nbsp;♥">
+                    </form>
+                  </div>
+                </div>
+                <div id="gpt">
+                      <span id="intro"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+  var dog_info_json = `{{ dog_info | tojson }}`
+  var dog_info = JSON.parse(dog_info_json)
+  var dog_id = dog_info.dog_id
+  var dog_name = dog_info.animal_name;
+  var dog_age = dog_info.age;
+  var dog_img = dog_info.diffusion_profile_image;
+  var dog_persona = dog_info.persona;
+  var dog_intro   = dog_info.introduction
+
+  var dog_img_tag = document.getElementById("dog_img")
+  var dog_name_tag = document.getElementById("dog_name")
+  var dog_persona_tag = document.getElementById("persona")
+  var dog_age_tag = document.getElementById("age")
+  var chat_form_tag = document.getElementById("chat_form")
+  var dog_id_tag = document.getElementById("id")
+  var dog_intro_tag = document.getElementById("intro")
+
+  dog_img_tag.src = dog_img
+  dog_img_tag.alt = dog_id
+  dog_name_tag.textContent = dog_name
+  dog_persona_tag.textContent = dog_persona
+  dog_age_tag.textContent = dog_age
+  chat_form_tag.action = `/main/introduction/${dog_id}`
+  dog_id_tag.value = dog_id
+  dog_intro_tag.textContent = dog_intro
+</script>
+
+{% endblock %}

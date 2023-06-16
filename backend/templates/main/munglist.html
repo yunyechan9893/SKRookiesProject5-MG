@@ -1,0 +1,318 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<style>
+    @font-face {
+        font-family: 'HSSaemaul-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+        font-weight: lighter;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    #main_frame {
+
+        width: 100%;
+        position: relative;
+    }
+
+
+    #frame2 {
+        position: relative;
+        border: 2px dashed rgb(239, 239, 239);
+        background-color: rgba(233, 236, 241, 0.5);
+        width: 1400px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 39.33333333%;
+    }
+
+
+    #frame3 {
+        width: 80%;
+        height: 20%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    #square1 {
+        position: relative;
+        border: 2px dashed rgb(239, 239, 239);
+        background-color: rgba(233, 236, 241, 0.5);
+        width: 100%;
+        height: 100%;
+        display: table;
+    }
+
+    .image-container {
+        /* border: 2px solid rgb(255, 51, 0); */
+        position: relative;
+        /* margin-left: 5%;
+        margin-right: 5%; */
+        width: 100%;
+        height: 330px;
+        display: flex;
+    }
+
+    .dog-card {
+        align-items: center;
+        justify-content: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        /* margin-left: 10px;
+        margin-right: 10px; */
+
+
+    }
+
+    .dog-card>a {
+        width: 90%;
+        height: 79%;
+        position: relative;
+    }
+
+
+    .image-container img {
+        width: 250px;
+        height: 250px;
+        position: relative;
+    }
+
+    .highlight {
+        background-color: pink;
+        display: inline-block;
+        padding: 0 8px;
+        line-height: 0.7;
+        font-family: 'HSSaemaul-Regular';
+        font-size: 20px;
+    }
+
+
+    #p_container {
+        width: 250px;
+        height: 50px;
+        position: relative;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    #p_container>p {
+        position: relative;
+        border: 1px dotted rgb(255, 135, 221);
+        width: 250px;
+        height: 24px;
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dog-card a {
+        position: relative;
+        width: 230px;
+        height: 230px;
+    }
+
+    .dog-card a img {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        border-radius: 15px;
+    }
+
+    #board_container {
+        padding-top: 50px;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        /* border: 4px dashed rgb(253, 0, 0); */
+    }
+
+    #title2 {
+        /* border: 2px dashed rgb(0, 0, 0); */
+        position: relative;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        font-size: 24px;
+    }
+
+    #board {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        /* border: 1px solid rgb(7, 123, 255); */
+        position: relative;
+        justify-content: center;
+    }
+
+    #square2 {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 50px;
+        position: relative;
+        /* border: 2px solid rgb(9, 255, 0); */
+        width: 1200px;
+        height: 300px;
+    }
+
+    #p2 {
+        position: absolute;
+        width: 450px;
+        /* border: 2px solid rgb(7, 123, 255); */
+        vertical-align: middle;
+    }
+
+    .board-contents {
+        position: absolute;
+        /* border: 2px solid rgb(255, 51, 0); */
+        left: 450px;
+        width: 600px;
+        height: 250px;
+    }
+
+    .dog_name {
+        font-family: 'Pretendard-Regular';
+    }
+
+    .test {
+        color: rgb(35, 35, 35);
+        font-weight: lighter;
+    }
+
+    #info {
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    .img_frame {
+        height: 100%;
+        width: 23%;
+        position: relative;
+        /* border: 2px solid rgb(7, 123, 255); */
+        margin: 0 auto;
+    }
+</style>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="main_about_area sections text-center">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="head_title text-center">
+                        <h2 style="font-weight: border;">List of Mungs</h2>
+                        <div class="separator"></div>
+                        <p> Here are many mungs for you! Click them , Check their profile and try chatting </p>
+                    </div>
+                    <div id="main_frame">
+                        <div id="frame2">
+                            <div id="square1">
+                                <div class="image-container">
+                                    <div class="img_frame" id="image-container_1"></div>
+                                    <div class="img_frame" id="image-container_2"></div>
+                                    <div class="img_frame" id="image-container_3"></div>
+                                    <div class="img_frame" id="image-container_4"></div>
+                                </div>
+                                <div class="image-container">
+                                    <div class="img_frame" id="image-container_5"></div>
+                                    <div class="img_frame" id="image-container_6"></div>
+                                    <div class="img_frame" id="image-container_7"></div>
+                                    <div class="img_frame" id="image-container_8"></div>
+                                </div>
+                                <div class="image-container">
+                                    <div class="img_frame" id="image-container_9"></div>
+                                    <div class="img_frame" id="image-container_10"></div>
+                                    <div class="img_frame" id="image-container_11"></div>
+                                    <div class="img_frame" id="image-container_12"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    var dogs = `{{ dogs | tojson }}`
+    var dogsJson = JSON.parse(dogs)
+
+    dogsJson.dog.forEach((dog, index) => {
+        var container_name = `#image-container_${index + 1}`
+        var container = document.querySelector(container_name);
+
+        // dog-card div 생성
+        var dogCard = document.createElement("div");
+        dogCard.classList.add("dog-card");
+
+        // a 태그 생성
+        var a = document.createElement("a");
+        a.href = "/main/introduction/" + dog.animal_id;
+
+        // img 태그 생성
+        var img = document.createElement("img");
+        img.src = dog.diffusion_profile_image;
+        img.alt = dog.animal_id;
+
+        // 이름, 나이 정보 div 생성
+        var infoDiv = document.createElement("div");
+        infoDiv.id = "info";
+
+        // 이름 정보 생성
+        var nameDiv = document.createElement("div");
+        nameDiv.classList.add("test");
+        var nameP = document.createElement("p");
+        nameP.classList.add("dog_name");
+        nameP.innerHTML = `<span class="highlight">이름</span> : ${dog.animal_name}`;
+        nameDiv.appendChild(nameP);
+
+        // 나이 정보 생성
+        var ageDiv = document.createElement("div");
+        ageDiv.classList.add("test");
+        var ageP = document.createElement("p");
+        ageP.classList.add("dog_age");
+        ageP.innerHTML = `<span class="highlight">나이</span> : ${dog.age}`;
+        ageDiv.appendChild(ageP);
+
+        // 각 요소를 적절한 위치에 추가
+        infoDiv.appendChild(nameDiv);
+        infoDiv.appendChild(ageDiv);
+        a.appendChild(img);
+        dogCard.appendChild(a);
+        dogCard.appendChild(infoDiv);
+
+        // 생성된 dogCard를 image-container에 추가
+        container.appendChild(dogCard);
+    });
+</script>
+
+{% endblock %}

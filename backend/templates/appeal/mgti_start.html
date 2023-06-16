@@ -1,0 +1,113 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<style>
+    @font-face {
+        font-family: 'S-CoreDream-3Light';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'S-CoreDream-3Light';
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    button {
+        /* 이전에 작성한 CSS 속성들 유지 */
+        margin: 10px auto;
+        /* 버튼을 수평 중앙 정렬 */
+    }
+
+    button {
+        font-family: 'S-CoreDream-3Light';
+        background-color: #F5D5E0;
+        color: #333;
+        font-size: 1.0rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        margin-top: 40px;
+    }
+
+    button:hover {
+        background-color: #F29B9B;
+        color: #fff;
+    }
+
+    #mgtiimg {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        background-color: pink;
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 0.5;
+        font-size: 17px;
+        color: #333
+    }
+
+    h2 {
+        color: rgb(42, 42, 42);
+    }
+
+    #frame {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+    }
+
+    #frame > p {
+        padding-top:30px
+    }
+
+    .title {
+        font-size: 2.7rem;
+    }
+</style>
+
+<div id="frame">
+    <h2 style="font-weight: border;"><span class="title">MGTI test</span></h2>
+    <div class="separator"></div>
+    <span class="subtitle">나와 잘 맞는 강아지가 궁금하니?</span>
+    <div class="button-container">
+        <button type="button" class="navyBtn" onClick="location.href='/appeal/mgti_ing'">♥&nbspStart&nbsp♥</button>
+    </div>
+    <img id="mgtiimg" src="https://firebasestorage.googleapis.com/v0/b/chubinibini.appspot.com/o/cloud%2Ffree-icon-pawprint-4063510.png?alt=media&token=7001cf20-884b-48a1-a98d-0a270f2fd1d8">
+    <p>MGTI test is based on original 'MBTI'.<br>Try it and findout which dog is fittable for you! We recommend 4 dogs for you as a result</p>
+</div>
+{% endblock %}

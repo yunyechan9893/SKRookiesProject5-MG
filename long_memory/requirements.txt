@@ -1,0 +1,6 @@
+flask
+pymysql-pooling
+pinecone-client
+sentence_transformers
+pymysql
+openai

@@ -1,0 +1,42 @@
+version: '1'
+services:
+    db:
+        build: 
+          context: db
+        stop_signal: SIGINT
+        ports:
+          - 3306:3306
+        restart: always
+        networks:
+          - db_net
+        volumes:
+          - db_vol:/var/lib/mysql
+    backend:
+        build: 
+          context: backend
+        stop_signal: SIGINT
+        ports:
+          - 8000:8000
+        environment:
+          FLASK_APP: backend.py
+        restart: always
+        networks:
+          - db_net
+    long_memory:
+        build: 
+          context: long_memory
+        stop_signal: SIGINT
+        environment:
+          FLASK_APP: run.py
+        ports:
+          - 3333:3333
+        restart: always
+        networks:
+          - db_net    
+
+networks:
+    db_net:
+volumes:
+    db_vol:
+
+

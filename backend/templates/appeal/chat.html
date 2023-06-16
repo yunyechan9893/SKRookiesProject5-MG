@@ -1,0 +1,289 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<style>
+  #main_frame {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  #frame {
+    position: absolute;
+      background-color: rgb(242, 246, 255, 0.5);
+      width: 55%;
+      height: 600px;
+      margin: 0 auto;
+      top: 30px;
+      }
+  
+    .chat-container {
+    width: 100%;
+    height: 89%;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+  
+  .chat-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .chat-box-alt {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .chat-bubble {
+    font-family: 'S-CoreDream-3Light';
+    background-color: #F5D5E0;
+    color: #333;
+    font-size: 1.0rem;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    max-width:fit-content;
+    word-wrap: break-word;
+  }
+  
+  .chat-bubble-alt {
+    background-color: #ddd;
+    color: #000;
+  }
+  
+  .me {
+    margin-right: 5%;
+  }
+  
+  .chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+  
+  .chat-input input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .chat-input button {
+    width: 18%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0084ff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .chat-input input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px #0084ff;
+  }
+
+  #profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+  }
+  
+  
+  .chat_wrap { border:1px solid #999; width:100%; padding:5px; font-size:13px; color:#333;  height: 100%;}
+  .chat_wrap .inner{background-color:#F5D5E0; border-radius:5px; padding:10px; height: 100%;overflow-y: scroll;}
+  .chat_wrap .item{margin-top:15px}
+  .chat_wrap .item:first-child{margin-top:0px;}
+  .chat_wrap .item .box{display:inline-block; max-width:250px; position:relative}
+  .chat_wrap .item .box::before{content:""; position:absolute; top: 5px; left:-8px; top:9px; margin-left: 6px; border-top:0px solid transparent; border-bottom:8px solid transparent;border-right:8px solid #fff;}
+  .chat_wrap .item .box .msg {background:#fff; border-radius:10px; padding:8px; margin-left: 6px; text-align:left; word-break: break-word;}
+  .chat_wrap .item .box .time {font-size:11px; color:#999; position:absolute; right: -75px; bottom:5px; width:70px}
+  .chat_wrap .item.mymsg{text-align:right}
+  .chat_wrap .item.mymsg .box::before{left:auto; right:-8px; border-left:8px solid #fee600; border-right:0;  }
+  .chat_wrap .item.mymsg .box .msg{background:#fee600; display: block;}
+  .chat_wrap .item.mymsg .box .time{right:auto; left:-75px}
+  .chat_wrap .item .box{transition:all .3s ease-out; margin:0 0 0 20px;opacity:0}
+  .chat_wrap .item.mymsg .box{transition:all .3s ease-out; margin:0 20px 0 0;}
+  .chat_wrap .item.mymsg.on {height: fit-content; align-items: start; display: block;}
+  
+  .chat_wrap .item.on {height: fit-content; align-items: start; display: flex;}
+  .chat_wrap .item.on .box{margin:0; opacity: 1; left: 3px;}
+  .chat_wrap .item.on .box.img{margin:0; opacity: 1; height: 100%; position: relative;}
+  .chat_wrap .item .box.img::before{content:""; position:relative; left:-8px; top:0px; border-top:0px solid transparent; border-bottom:8px solid transparent;border-right:8px}
+
+  input[type="text"]{border:0; width:100%;background:#ddd; border-radius:5px; height:30px; padding-left:5px; box-sizing:border-box; margin-top:5px}
+  input[type="text"]::placeholder{color:#999}
+  
+  </style>
+
+<div id="main_frame">
+  <div id="frame">
+    <div class="chat_wrap">
+      <div class="inner" id="inner">  
+      </div>
+      <div class="chat-input">
+        <input type="text" id="message-input" class="mymsg" placeholder="메시지를 입력하세요...">
+        <button id="send-btn" onclick="sendMessage()">전송</button>
+      </div>                       
+    </div>          
+  </div>
+</div>
+
+<script>
+  var dog_info_json = `{{ dog_info | tojson }}`;
+  
+
+  var dog_info = JSON.parse(dog_info_json);
+  var dogId = dog_info.dog_id;
+  var userId = dog_info.user_id;
+  var dog_name = dog_info.dog_name;
+  var profile = dog_info.img_src;
+  var frendNum = dog_info.friend_no
+  const messageInput = document.querySelector("#message-input");
+  const sendButton = document.querySelector("#send-btn");
+  console.log(frendNum)
+  cookie = getCookie()
+  async function getCookie() {
+        const response = await fetch('/appeal/load_before_chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"friendNo":frendNum, "dogId":dogId, "userId":userId})
+      });
+      
+          const cookie = await response.json();
+
+          await cookie.chat.slice().reverse().forEach(chat => {
+            var content = chat.content
+            var send = chat.send == 0 ? 'me' : 'chat-bubble-alt'
+            var date = set_date_format(chat.date).toString()//.then(value => value.toString())
+            var name = chat.send == 0 ? dogId : userId
+            makeBubble(send, name, content, date)
+          });
+
+          return cookie
+    }
+
+    function set_date_format(date){
+      time = date.split(" ")[1].split(":")
+      ampm = parseInt(time[0], 2) > 12 ? `오후 ${time[0]}:` : `오전 ${time[0]}:`
+      mm = time[1]
+      format_date = `${ampm}${mm}`
+
+      return format_date
+    }
+
+
+    async function makeBubble(target, name, userMsg, date) {
+      var isMe = target === 'me';
+      var profilePart = isMe ? '' : `<div class="box img"><img id="profile" src=${profile}></div>`;
+
+      var _tar = $(".chat_wrap .inner").append(
+          `<div class="item ${isMe ? 'mymsg' : ''}">
+              ${profilePart}
+              <div class="box">
+                  <p class="msg">${userMsg}</p>
+                  <span class="time">${date}</span>
+              </div>
+          </div>`
+      );
+
+      var lastItem = $(".chat_wrap .inner .item:last");
+      setTimeout(function () {
+          lastItem.addClass("on");
+      }, 10);
+
+      var position = lastItem.position().top + $(".chat_wrap .inner").scrollTop();
+
+      $(".chat_wrap .inner").stop().animate({ scrollTop: position }, 500);
+  }
+
+  var chatList = []
+  var msgCnt = 0
+  sendButton.addEventListener("click", async (event) => {
+    // 메세지 입력칸 값 가져오기
+    var query = messageInput.value
+    // 메세지 입력칸 초기화
+    messageInput.value = "";
+    // 백엔드로 보내기 위해 json 형식으로 구성하기
+    const user_msg = `{"query": "${query}", "dogId": "${dogId}", "userId": "${userId}"}`
+    // send 0 유저 1 강아지
+
+    chatList.push({ "no": msgCnt, "content": query, "send": 0, "date": new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) });
+    if (chatList.length == 10)
+    chatList.shift()
+
+    msgCnt++
+
+    if (user_msg) {
+      makeBubble('me', userId, query, new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+
+      const response = await fetch('/appeal/answer', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "userId": userId, "dogId": dogId, "friendNum": frendNum, "chat": chatList.length == 0 ?
+            { "no": msgCnt, "content": query, "send": 0, "date": new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) } : chatList
+        })
+      });
+
+      const data = await response.json();
+      const contents = data.message_content.toString().split('.');
+      for (const content of contents) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        makeBubble('chat-bubble-alt', dog_name, content, new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })); // {{chat_dog_name}}는 백엔드에서 보내준 강아지 이름입니다.
+      }
+
+      chatList.push({ "no": msgCnt, "content": data.message_content, "send": 1, "date": new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) })
+      if (chatList.length == 10)
+      chatList.shift()
+      msgCnt++
+    }
+  });
+
+
+  function sendMessage() {
+    // 클릭 이벤트 디스패치
+    sendButton.dispatchEvent(new Event("click"));
+  }
+
+  // 클릭 이벤트 핸들러
+  sendButton.onclick = function () {
+    // 원하는 동작 수행
+  };
+
+  messageInput.addEventListener("keyup", (event) => {
+    if (event.keyCode === 13) {
+      sendMessage();
+    }
+  });
+
+
+  
+  var currentTime = function(){
+      var date = new Date();
+      var hh = date.getHours();
+      var mm = date.getMinutes();
+      var apm = hh >12 ? "오후":"오전";
+      var ct = apm + " "+hh+":"+mm+"";
+      return ct;
+  }
+
+</script>
+
+{% endblock %}

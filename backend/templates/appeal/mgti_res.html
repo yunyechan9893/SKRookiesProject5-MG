@@ -1,0 +1,149 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<style>
+  @font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+    h1 {
+    margin-bottom: 50px;
+    font-size: 3.7rem;
+    color:rgb(42, 42, 42);
+  }
+    h2 {
+    margin-bottom: 20px;
+    color:rgb(42, 42, 42);
+    font-family: 'GangwonEdu_OTFBoldA';
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    font-family: 'S-CoreDream-3Light';
+    text-align: center; 
+  }
+  
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  label {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .image-container img {
+    width: 200px;
+    height: 200px;
+    margin: 0 10px;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .highlight {
+    background-color: rgb(255, 192, 203);
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 0.5;
+    font-family: 'S-CoreDream-3Light';
+  }
+  
+  #frame{
+      padding-bottom: 60px;
+      position: relative;
+      padding-top: 100px;
+  }
+  
+  </style>
+
+
+  <!-- -->
+  <div id="frame">
+    <h2><span class="title">나와 잘 어울리는 강아지의 MBTI 유형은?</span></h2>
+    <div class="separator"></div>
+
+    <div>
+      <h1>
+        <span class="highlight">
+          <a id="result_mbtiType" style="color: rgb(57, 53, 53)">
+          </a>
+        </span>
+      </h1>
+      <p>"&nbsp;
+        <a id="mbti_introduction">
+        </a>&nbsp;"
+      </p>
+
+      <div class="separator"></div>
+      <h2><span class="title"> </span></h2>
+      <div class="image-container">
+        <form id="img_form" method="get">
+          <input id="image1" type="image" alt="photo" onclick="changeActionAndSubmit(event)">
+          <input id="image2" type="image" alt="photo" onclick="changeActionAndSubmit(event)">
+          <input id="image3" type="image" alt="photo" onclick="changeActionAndSubmit(event)">
+          <input id="image4" type="image" alt="photo" onclick="changeActionAndSubmit(event)">
+        </form>
+      </div>
+      <p style="font-size:15px; padding-top:30px;">If you want to chat with these mung, Then Sign up !!</p>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    var mbti = JSON.parse('{{mbti | tojson}}')["mbti"]
+    $("#result_mbtiType").text(mbti)
+    
+    const response = fetch('/appeal/mgti_res/get_dog', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: mbti
+          }).then(response => response.json())
+            .then(data => {
+              console.log('서버 응답:', data);
+              // 서버 응답에 대한 추가 처리 수행
+              data["dogs"].forEach((dog_info, idx) => {
+                var src = dog_info["diffusion_profile_image"]
+                $(`#image${idx+1}`).attr("src", src).attr("value",dog_info["animal_id"])
+              });
+              var mbti_info = data["mbti_info"]
+              $("#mbti_introduction").text(mbti_info)
+              
+            })
+            .catch(error => {
+              console.error('에러 발생:', error);
+              // 에러 처리 수행
+            });
+
+      function changeActionAndSubmit(event) {
+        var form = document.getElementById("img_form");
+        var targetId = $(`#${event.target.id}`).val();
+        form.action = `/main/introduction/${targetId}`;
+        form.submit();
+    }
+
+    
+  </script>
+
+  {% endblock %}
