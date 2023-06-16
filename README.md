@@ -1,8 +1,67 @@
-# 클로닝
-    - main 클로닝 할 때
-        - git clone https://github.com/dkdlel395/MG.git
+# 간단 정리
+## 영상
+    - 홍보영상 : https://www.youtube.com/watch?v=CcHQCNGeMlg
+    - 시연영상 : https://www.youtube.com/watch?v=CGVKXz7o-v8
+    
+## 인프라 구성도
+![7조_인프라구성도](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/c5c18ae0-ee20-44a3-97f7-ca7923d27d67)
 
-    - git clone -b 가지이름 https://github.com/dkdlel395/MG.git
-# 구동 명령어
-    - set FLASK_APP=backend.py
-    - flask run --debug
+# PPT
+![7조_최종발표1](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/8c5dc5a0-6bc5-4f64-85cd-a21783fdbf65)
+![7조_최종발표2](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/5f069258-0217-4c46-9a27-f26bf9ad5a5e)
+![7조_최종발표3](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/0a7ad401-6bfe-4719-8d1a-b1236e3225a7)
+![7조_최종발표4](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/d2895ae5-f2e6-47bf-bc17-2c1fd1a3a850)
+![7조_최종발표5](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/5f9fd8f9-5760-48fc-a3ef-e0f6361836a5)
+![7조_최종발표6](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/86741561-4af3-415b-b8bc-c2db5a03909d)
+![7조_최종발표7](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/d62f9cdf-fe9f-4e65-92d8-6216db2e145d)
+![7조_최종발표8](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/be6410db-b8ab-487c-8685-c4d8a736c2a2)
+![7조_최종발표9](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/1d9ec2e5-00da-4a14-a0e5-1e2344019700)
+![7조_최종발표10](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/cb96134c-bb74-4909-8fb0-97e34d0fb52d)
+![7조_최종발표11](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/456786d0-e838-4f95-9793-a25e8db57d41)
+![7조_최종발표12](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/ec554458-6e40-412b-8ca8-192f019362fb)
+![7조_최종발표13](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/7a492e71-1515-40a4-8463-9dd3e7c5d52f)
+![7조_최종발표14](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/abb1d2df-158f-421e-863c-7eafdd2d12d2)
+![7조_최종발표15](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/a4458195-7442-4ed2-ba6b-649f91570f9a)
+![7조_최종발표16](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/f63e6f9e-d6d2-4270-b3d8-2acf9600a48b)
+![7조_최종발표17](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/87d3e4df-2fee-4d06-9b0e-c59ae3881e72)
+![7조_최종발표18](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/757fa3a4-3514-4738-a5e1-5bb719adfba4)
+![7조_최종발표19](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/8354ce15-e0e6-4c1e-a943-3677f95a5213)
+![7조_최종발표20](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/e94a4926-8417-4434-b895-1df75440c690)
+![7조_최종발표21](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/50578d40-5bc3-4555-8dba-c4e2fcd6adbd)
+![7조_최종발표22](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/9be92f1f-53ff-4d00-ac2d-b1879d0901ac)
+![7조_최종발표23](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/5ff07b39-8a27-49be-ac8b-9820953bf0bb)
+![7조_최종발표24](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/dc36421c-75d7-45dc-9517-db89701223e3)
+![7조_최종발표25](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/0217dfa6-dd05-42dc-b89f-e91c86ef9744)
+![7조_최종발표26](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/224f4fd8-ba02-45bf-a453-16f7c37bd8e5)
+![7조_최종발표27](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/240d90d6-233e-4fc7-ac04-2b94dd282561)
+![7조_최종발표28](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/b6d259d4-a9a2-4356-bea3-579b44e68b86)
+![7조_최종발표29](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/036f7354-8247-49f4-83e6-55848a2666b6)
+![7조_최종발표30](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/9dbcfbcb-8b4e-4349-8c40-27d4491ce528)
+![7조_최종발표31](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/5135caf2-a090-425e-b119-82ed36e54f72)
+![7조_최종발표32](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/1b4aea45-4d05-41c3-82eb-817805de1477)
+![7조_최종발표33](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/c2c3fbfd-7e36-4f8d-a636-6cd224fd4a82)
+![7조_최종발표34](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/afb6d740-d329-491f-8f4d-763dc4df62f5)
+![7조_최종발표35](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/329fe434-e665-4fbd-94d5-fc852df96e29)
+![7조_최종발표36](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/ddd79e96-2f34-40ba-8fdc-ebacc377a40f)
+![7조_최종발표37](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/b2495cb5-0d79-4858-9f39-6ac3b7f42b0f)
+![7조_최종발표38](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/32996d4b-691c-4b4f-9524-5cc70eb6ae60)
+![7조_최종발표39](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/17603568-5b9f-44ec-b179-071596112b9c)
+![7조_최종발표40](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/43aeb70e-17de-48e7-bf74-03022c44fe9b)
+![7조_최종발표41](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/5864b185-f495-4526-8b1e-3eb26aedc016)
+![7조_최종발표42](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/254cec5f-ab1a-4f8b-89e3-6f9b8bff2abc)
+![7조_최종발표43](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/52a7d70e-aef3-40c4-be86-070126566049)
+![7조_최종발표44](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/114d220b-8539-48ce-a830-3ec27d58e92f)
+![7조_최종발표45](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/b00108fd-1d4d-45c0-95e7-f68e1218d0b0)
+![7조_최종발표46](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/d579937b-33dd-4bdd-801c-5862d034f1d8)
+![7조_최종발표47](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/658650a0-ca98-4659-899a-4d1c1a805ba3)
+![7조_최종발표48](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/2e5eb557-329e-484b-9db9-eaf8cd19a1bb)
+![7조_최종발표49](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/a9ea09ea-ef7e-44cc-8d90-9e4b9889ae3f)
+![7조_최종발표50](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/72020b55-b6f9-4a2a-bf2f-f60840618999)
+![7조_최종발표51](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/69829a42-f1f3-48a9-ba38-4d2314a65763)
+![7조_최종발표52](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/6b5465e6-99fd-4eff-a812-02889a697792)
+![7조_최종발표53](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/2e6b24bd-1fa0-4a62-9112-5b696c69c53a)
+![7조_최종발표54](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/62d79382-aa4b-49e6-ab30-54e559d5d111)
+![7조_최종발표55](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/809e26a7-42dd-485a-8c3b-545c623b3ba7)
+![7조_최종발표56](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/3c21ff58-9608-4acd-bf7d-fc7dee882372)
+![7조_최종발표57](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/1a618803-e92b-4f1a-ba2b-646332fb93e9)
+![7조_최종발표58](https://github.com/yunyechan9893/sk_rookies_project5/assets/125535111/6f8ce594-3c93-41c8-adca-cae84f06b6f1)
